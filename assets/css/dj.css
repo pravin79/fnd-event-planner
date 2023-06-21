@@ -1,0 +1,76 @@
+body{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: #fff;
+    background-color: #111;
+}
+
+p {
+    color: #fff;
+}
+
+/* 
+     BANNER SECTION
+*/
+.banner {
+    background-image: url(../imgs/dima-kosh-gsvnEoRh2mc-unsplash.jpg);
+}
+
+
+.whatwedo__container .row {
+    background-color: #151515;
+}
+
+.whatwedo__container h4 {
+    color: #111;
+}
+
+.wahtwedo__click-for-dj,
+.explore-more {
+    background-color: transparent;
+    color: #fff;
+}
+
+.wahtwedo__click-for-dj:hover,
+.explore-more:hover {
+    color: #111;
+    background-color: #fff;
+}
+
+.bg-gray {
+    background-color: #151515;
+}
+
+.event-dates__container {
+    background-color: #151515;
+}
+
+.contact-form button {
+    margin-top: 15px;
+    padding: 12px 30px;
+    color: #111;
+    border: 1px solid #fff;
+    background-color: #fff;
+    transition: .2s linear;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.input-fileds input {
+    color: #fff;
+    border: 1px #151515;
+    background-color: #151515;
+}
+
+textarea {
+    color: #fff;
+    border: 2px #151515;
+    background-color: #151515;
+}
+
+.contact-form button:hover {
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
+}

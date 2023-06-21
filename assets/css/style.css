@@ -1,0 +1,783 @@
+/* 
+     POPPINS FONT
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Stick+No+Bills:wght@400;500&display=swap');
+
+/* 
+     CSS VARIABLES 
+*/
+:root{
+     --header-height: 3rem;
+     --font-semi: 600;
+}
+
+/*
+     COLORS 
+*/
+:root{
+     --first-color: #1E5128;
+     /* --second-color: #4ae3b5; */
+     /* --second-color: #fc6b3f; */
+     /* --second-color: #ffbd39; */
+     --second-color: #00ce79;
+     --third-color: #191A19;
+     --fourth-color: #D8E9A8;
+}
+
+/* 
+     TYPOGRAPHY 
+*/
+:root{
+     --body-font: 'Poppins', sans-serif;
+     --big-font-size: 2rem;
+     --h2-font-size: 1.25rem;
+     --normal-font-size: 0.938rem;
+}
+
+/* 
+     MARGENS 
+*/
+:root{
+     --mb-1: 0.5rem;
+     --mb-2: 1rem;
+     --mb-3: 1.5rem;
+     --mb-4: 2rem;
+     --mb-5: 2.5rem;
+     --mb-6: 3rem;
+}
+
+/* 
+     Z-INDEX 
+*/
+:root{
+     --z-back: -10;
+     --z-normal: 1;
+     --z-tooltip: 10;
+     --z-fixed: 100;
+}
+
+/* 
+     BASE 
+*/
+*, ::before, ::after{
+     box-sizing: border-box;
+}
+
+html{
+     scroll-behavior: smooth;
+}
+
+body{
+     font-family: var(--body-font);
+     font-size: var(--normal-font-size);
+     color: #111;
+     background-color: #fff;
+}
+
+h1, h2, p{
+     margin: 0;
+}
+
+p {
+     color: #111;
+     line-height: 1.8;
+}
+
+ul{
+     margin: 0;
+     padding: 0;
+     list-style: none;
+}
+
+a{
+     text-decoration: none;
+}
+
+img{
+     max-width: 100%;
+     height: auto;
+     display: block;
+}
+
+section{
+     position: relative;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-bottom: 150px;
+}
+
+/* 
+     HEADER SECTION
+*/
+.header {
+     padding: 25px 0;
+     position: fixed;
+     z-index: var(--z-fixed);
+     transition: .2s linear;
+}
+
+.header__container {
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+
+header .header__logo {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.header__logo img {
+     width: 56px;
+     border-radius: 50%;
+     -webkit-animation: mover 1s infinite  alternate;
+     animation: mover 1s infinite  alternate;
+}
+
+header .header__logo a {
+     font-size: 24px;
+     color: #fff;
+     font-weight: bold;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     display: flex; 
+     justify-content: center;
+     align-items: center;
+     font-family: 'Teko', sans-serif;
+}
+
+.header .header__logo span {
+     margin-left: 5px;
+     font-size: 16px;
+     border: 1px solid;
+     padding: 3px 10px;
+     border-radius: 3px;
+}
+
+.header .header__logo span:hover {
+     /* background-color: #fb3c7f; */
+}
+
+.img-logo {
+     width: 100%;
+}
+
+.header .header__sub-logo {
+    font-size: 18px;
+    font-weight: 400;
+    font-family:  'Poppins', sans-serif;
+}
+
+.header__nav-links {
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: .2s linear;
+}
+
+.header__nav-links li {
+     margin-left: 30px;
+     list-style: none;
+}
+
+.header__nav-links li a {
+     color: #fff;
+}
+
+.hamburger-menu {
+     display: none;
+}
+
+/* 
+     STICKY HEADER
+*/
+header.sticky{
+     background-color: #fff;
+     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+     padding: 10px 0;
+}
+
+header.sticky a {
+     color: #111;
+}
+
+header.sticky .hamburger-menu div{
+     background-color: #000;
+}
+
+/* Responsive styles */
+
+@media (max-width: 998px) {
+     .header {
+         padding: 15px 0;
+     }
+ 
+     .header__logo img {
+         width: 40px;
+     }
+ 
+     header .header__logo a {
+         font-size: 20px;
+     }
+ 
+     .header__nav-links {
+         flex-direction: column;
+         align-items: flex-end;
+         position: absolute;
+         top: 100%;
+         right: 0;
+         background-color: #111;
+         padding: 10px;
+         width: 100%;
+         display: none;
+     }
+ 
+     .header__nav-links li {
+         margin-left: 0;
+         margin-bottom: 10px;
+     }
+ 
+     .header__nav-links li a {
+         color: #fff;
+         display: block;
+     }
+ 
+     .header__container.active .header__nav-links {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 100px;
+         margin-top: 10px;
+         border-radius: 6px;
+     }
+ 
+     .hamburger-menu {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         width: 30px;
+         height: 20px;
+         cursor: pointer;
+         transition: transform 0.3s ease-in-out;
+         transform: rotate(0deg);
+     }
+ 
+     .hamburger-menu__line {
+         width: 100%;
+         height: 2px;
+         background-color: #fff;
+         transition: background-color 0.3s ease-in-out;
+     }
+ 
+     .header__container.active .hamburger-menu {
+         /* transform: rotate(-45deg); */
+         margin-top: 10px;
+     }
+ 
+     .header__container.active .hamburger-menu__line:nth-child(1),
+     .header__container.active .hamburger-menu__line:nth-child(3) {
+         transform: rotate(45deg);
+     }
+     
+     .header__container.active .hamburger-menu__line:nth-child(3) {
+         transform: rotate(-45deg);
+         margin-bottom:19px;
+     }
+ 
+     .header__container.active .hamburger-menu__line:nth-child(2) {
+         opacity: 0;
+     }
+ }
+
+/* 
+     BANNER SECTION
+*/
+.banner {
+    background:#000;
+    height: 100vh;
+    background-image: url(../imgs/amish-thakkar-7O422yG_b80-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.banner::before{
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 200px;
+     z-index: 1;
+     background: linear-gradient(to top,#000,transparent);
+}
+
+.banner__container {
+     display: flex;
+     text-align: center;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+}
+
+.banner__title {
+     margin-bottom: 56px;     
+}
+
+.banner__title h1 {
+     font-size: 120px;
+     font-weight: bold;
+     color: #fff;
+     
+     /* margin-bottom: 15px; */
+}
+
+.banner__title h3 {
+     font-size: 70px;
+     font-weight: bold;
+     text-transform: uppercase;
+     color: #fff;
+     font-family: 'Stick No Bills', sans-serif;
+}
+
+.banner__mouser-animate i {
+     font-size: 32px;
+     color: #fff;
+}
+
+.click-for-dj {
+     margin-top: 30px;
+     padding: 15px 30px;
+     background-color: #FCFCFC;
+     color: #111;
+     z-index: 10;
+     transition: .2s linear;
+     border: 1px solid #9F9F9F;
+}
+
+.click-for-dj:hover {
+     background-color: transparent;
+     color: #fff;
+}
+
+/* 
+     WHAT WE DO SECTION
+*/
+.whatwedo__container {
+     text-align: center;
+}
+
+.whatwedo__container h3 {
+     font-size: 48px;
+}
+
+.whatwedo__container h4 {
+     font-size: 32px;
+     padding: 10px 20px;
+     display: inline-block;
+     margin-bottom: 30px;
+     background-color: #fff;
+}
+
+.whatwedo__container h3,
+.whatwedo__container h4 {
+     font-family: 'Dancing Script', cursive;
+}
+
+.whatwedo__title {
+     margin-bottom: 30px;
+}
+
+.whatwedo__container .row {
+     padding: 30px;
+     background-color: #F3F3F3;
+     border-radius: 6px;
+}
+
+.whatwedo__event-planner {
+     text-align: start;
+     border-right: 1px solid #999;
+     padding: 50px;
+}
+
+.whatwedo__event-planner p {
+     margin-bottom: 15px;
+}
+
+.whatwedo__event-planner ul {
+     padding: 20px;
+}
+
+.whatwedo__event-planner li {
+     list-style-type: circle;
+     margin-bottom: 10px;
+}
+
+.whatwedo__dj-planner {
+     text-align: start;
+     padding-left: 30px;
+     padding: 50px;
+
+}
+
+.whatwedo__dj-planner p {
+     margin-bottom: 15px;
+}
+
+.whatwedo__dj-planner ul {
+     padding: 20px;
+}
+
+.whatwedo__dj-planner li {
+     list-style-type: circle;
+     margin-bottom: 10px;
+}
+
+.wahtwedo__click-for-dj {
+     margin-top: 15px;
+     display: inline-block;
+     padding: 15px 30px;
+     background-color: #fff;
+     color: #111;
+     z-index: 10;
+     border: 1px solid #fff;
+}
+
+.wahtwedo__click-for-dj:hover {
+     background-color: transparent;
+     color: #111;
+}
+
+@media (max-width: 998px) {
+     .whatwedo__event-planner,
+     .whatwedo__dj-planner {
+          padding: 0px;
+          border-right: none;
+     }
+}
+
+/* 
+     EXPLORE OUR SERVICES SECTION
+*/
+.exploreourservies__container {
+     text-align: center;
+}
+
+.exlore-our-services h3 {
+     font-size: 48px;
+}
+
+.exlore-our-services h3,
+.exlore-our-services h4 {
+     font-family: 'Dancing Script', cursive;
+}
+
+.exlore-our-services p {
+     margin-bottom: 15px;
+}
+
+.exploreourservies__container .row {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 40px;
+}
+
+.img-bx img {
+     width: 100%;
+}
+
+.cont-bx {
+     text-align: left;
+     padding: 50px;
+}
+
+.cont-bx h4 {
+     margin-bottom: 15px;
+     font-weight: bold;
+}
+
+.cont-bx ul {
+     padding: 20px;
+}
+
+.cont-bx li {
+     list-style-type: circle;
+     margin-bottom: 10px;
+}
+
+.explore-more {
+     /* margin-top: 15px; */
+     display: inline-block;
+     padding: 15px 30px;
+     background-color: #FAFAFA;
+     color: #333;
+     z-index: 10;
+     border: 1px solid #fff;
+}
+
+.bg-gray {
+     background-color: #F3F3F3;
+     border-radius: 6px;
+}
+
+@media (max-width: 998px) {
+     .cont-bx {
+          padding: 0px;
+          margin-top: 30px;
+     }
+
+     .exploreourservies__container .row {
+          margin: 0px;
+          margin-top: 30px;
+     }
+
+     .bg-gray {
+          flex-direction: column-reverse;
+          padding: 20px;
+     }
+}
+
+/* 
+     EVENT DATES SECTION
+*/
+.event-dates__container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     flex-direction: column;
+     background-color: #F3F3F3;
+     padding: 100px;
+     border-radius: 6px;
+}
+
+.event-dates__container h3,
+.event-dates__container h5  {
+     font-family: 'Dancing Script', cursive;
+     /* font-weight: bold; */
+}
+
+.event-dates__container h5 {
+     font-weight: bold;
+}
+
+.event-dates__container h3 {
+     font-size: 48px;
+     padding-bottom: 10px;
+     border-bottom: 2px solid #CCCCCC;
+     width: 30%;
+     margin-bottom: 30px;
+}
+
+.sub-text {
+     margin-bottom: 30px;
+     width: 60%;
+}
+
+.event-details {
+     padding: 20px;
+}
+
+.event-name {
+     padding-bottom: 10px;
+     border-bottom: 2px solid #CCCCCC;
+     margin-bottom: 15px;
+}
+
+@media (max-width: 998px) {
+     .event-dates__container {
+          padding: 50px 0;
+     }
+
+     .sub-text {
+          margin-bottom: 30px;
+          width: 100%;
+     }
+
+     .event-details {
+          padding: 20px 50px;
+     }
+}
+
+/* 
+     GET IN TOUCH SECTION
+*/
+.getintouch_container h3 {
+     font-family: 'Dancing Script', cursive;
+     font-size: 34px;
+     margin-bottom: 30px;
+}
+
+.contact-info {
+     padding: 50px;
+     border-right: 2px solid #CCCCCC;
+}
+
+.contact-details {
+     display: flex;
+     align-items: center;
+     margin-bottom: 15px;
+}
+
+.contact-form {
+     padding: 0 50px;
+}
+
+.contact-details i {
+     font-size: 32px;
+     margin-right: 15px;
+}
+
+.contact-details p {
+     /* font-size: 32px; */
+}
+
+.input-fileds {
+     margin-bottom: 20px;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     margin-top: 50px;
+}
+
+.input-fileds input {
+     padding: 10px 20px;
+     width: 49%;
+}
+
+textarea {
+     width: 100%;
+     padding: 10px 20px;
+     height: 150px;
+}
+
+.contact-form button {
+     margin-top: 15px;
+     padding: 12px 30px;
+     color: #fff;
+     border: 1px solid #111;
+     background-color: #111;
+     transition: .2s linear;
+     font-weight: bold;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+}
+
+.contact-form button:hover {
+     color: #111;
+     border: 1px solid #111;
+     background-color: transparent;
+}
+
+@media (max-width: 998px) {
+
+     .input-fileds {
+          display: flex;
+          flex-direction: column;
+          margin-top: 0;
+     }
+     .input-fileds input {
+          width: 100%;
+          margin-top: 20px;
+     }
+}
+
+/* 
+     FOOTER SECTION
+*/
+footer {
+     background-color: #111;
+     padding: 4rem;
+     color: #fff;
+}
+
+footer .footer__logo {
+     display: flex;
+     margin-bottom: 30px;
+}
+
+.footer__logo img {
+     width: 56px;
+     border-radius: 50%;
+}
+
+footer .footer__logo a {
+     font-size: 24px;
+     color: #fff;
+     font-weight: bold;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     display: flex; 
+     justify-content: center;
+     align-items: center;
+     font-family: 'Teko', sans-serif;
+}
+
+footer .footer__logo span {
+     margin-left: 5px;
+     font-size: 16px;
+     border: 1px solid;
+     padding: 3px 10px;
+     border-radius: 3px;
+}
+
+footer p {
+     color: #BABABA;
+     font-size: 14px;
+     margin-bottom: 15px;
+}
+
+.footer-links li{
+     margin-bottom: 10px;
+}
+
+.footer-links li a{
+     color: #ccc;
+}
+
+.social-links {
+     display: flex;
+}
+
+footer .social-links i {
+     position: relative;
+     font-size: 24px;
+}
+
+.social-links a {
+     color: #fff;
+     margin-right: 20px;
+     transition: .2s linear;
+}
+
+.links-cont {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+
+.social-links a:hover {
+     transform: translateY(-5px);
+     color: #CCCCCC;
+}
+
+@media (max-width: 998px) {
+
+     footer {
+          padding: 4rem 10px;
+     }
+
+     .links-cont {
+          align-items: flex-start;
+          margin-bottom: 20px;
+     }
+}
